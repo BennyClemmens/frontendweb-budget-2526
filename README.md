@@ -173,3 +173,7 @@ PS D:\DATA\GIT\FRONTENDWEB\frontendweb-budget-2526\budget>
 ### App.jsx
 
 - de default react app verswijst nu naar dit nieuw component (met nu nog hardcoded text)
+
+### Mock data
+
+- toegevoegd in `src/api/mock_data.js`
