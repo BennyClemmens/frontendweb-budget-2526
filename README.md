@@ -159,3 +159,9 @@ PS D:\DATA\GIT\FRONTENDWEB\frontendweb-budget-2526\budget> pnpm lint
 
 PS D:\DATA\GIT\FRONTENDWEB\frontendweb-budget-2526\budget>
 ```
+
+### vscode settings
+
+- moved global vscode user settings to workspace .vscode/settings.json
+  - settings came with installing the software for the course
+  - TODO: perhaps look into the prettier formatter and integrating those rules into the linter
