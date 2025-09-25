@@ -216,3 +216,6 @@ dependencies:
 
 Done in 10.1s using pnpm v10.17.0
 ```
+
+- `vite.config.js` updated
+- tailwind imported in `index.css`
