@@ -72,3 +72,90 @@ Done in 2.6s using pnpm v10.17.0
 ### .gitignore
 
 - Download de `.gitignore` van <https://github.com/github/gitignore/blob/main/Node.gitignore>
+
+### eslint.config.js
+
+- no linting errors in basic setup
+
+```PS
+PS D:\DATA\GIT\FRONTENDWEB\frontendweb-budget-2526\budget> pnpm lint
+
+> budget@0.0.0 lint D:\DATA\GIT\FRONTENDWEB\frontendweb-budget-2526\budget
+> eslint .
+
+PS D:\DATA\GIT\FRONTENDWEB\frontendweb-budget-2526\budget>
+```
+
+- Stylistic plugin
+
+```bash
+pnpm add -D @stylistic/eslint-plugin
+```
+
+```bash
+PS D:\DATA\GIT\FRONTENDWEB\frontendweb-budget-2526\budget> pnpm add -D @stylistic/eslint-plugin
+Packages: +2
+++
+Progress: resolved 170, reused 114, downloaded 1, added 2, done
+
+devDependencies:
++ @stylistic/eslint-plugin 5.4.0
+
+╭ Warning ───────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                            │
+│   Ignored build scripts: @swc/core, esbuild.                                               │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed to run scripts.   │
+│                                                                                            │
+╰────────────────────────────────────────────────────────────────────────────────────────────╯
+
+Done in 2.4s using pnpm v10.17.0
+```
+
+- extra rules in `eslint.config.js` cfr. course
+  - saving this file automatically corrects fixable stuff, hence some updates in the config file tiself
+  - `pnpm lint` does the rest of the magic
+
+```bash
+PS D:\DATA\GIT\FRONTENDWEB\frontendweb-budget-2526\budget> pnpm lint
+
+> budget@0.0.0 lint D:\DATA\GIT\FRONTENDWEB\frontendweb-budget-2526\budget
+> eslint .
+
+
+D:\DATA\GIT\FRONTENDWEB\frontendweb-budget-2526\budget\src\App.jsx
+   1:33  error  Missing semicolon  @stylistic/semi
+   2:43  error  Missing semicolon  @stylistic/semi
+   3:33  error  Missing semicolon  @stylistic/semi
+   4:19  error  Missing semicolon  @stylistic/semi
+   7:40  error  Missing semicolon  @stylistic/semi
+  32:4   error  Missing semicolon  @stylistic/semi
+  35:19  error  Missing semicolon  @stylistic/semi
+
+D:\DATA\GIT\FRONTENDWEB\frontendweb-budget-2526\budget\src\main.jsx
+   1:35  error  Missing semicolon  @stylistic/semi
+   2:46  error  Missing semicolon  @stylistic/semi
+   3:21  error  Missing semicolon  @stylistic/semi
+   4:28  error  Missing semicolon  @stylistic/semi
+  10:2   error  Missing semicolon  @stylistic/semi
+
+D:\DATA\GIT\FRONTENDWEB\frontendweb-budget-2526\budget\vite.config.js
+  1:36  error  Missing semicolon  @stylistic/semi
+  2:45  error  Missing semicolon  @stylistic/semi
+  7:3   error  Missing semicolon  @stylistic/semi
+
+✖ 15 problems (15 errors, 0 warnings)
+  15 errors and 0 warnings potentially fixable with the `--fix` option.
+
+ ELIFECYCLE  Command failed with exit code 1.
+PS D:\DATA\GIT\FRONTENDWEB\frontendweb-budget-2526\budget> pnpm lint --fix
+
+> budget@0.0.0 lint D:\DATA\GIT\FRONTENDWEB\frontendweb-budget-2526\budget
+> eslint . "--fix"
+
+PS D:\DATA\GIT\FRONTENDWEB\frontendweb-budget-2526\budget> pnpm lint
+
+> budget@0.0.0 lint D:\DATA\GIT\FRONTENDWEB\frontendweb-budget-2526\budget
+> eslint .
+
+PS D:\DATA\GIT\FRONTENDWEB\frontendweb-budget-2526\budget>
+```
