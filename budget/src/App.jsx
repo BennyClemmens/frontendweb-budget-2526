@@ -2,10 +2,16 @@ import Transaction from './components/transactions/Transaction';
 import TRANSACTION_DATA from './api/mock_data';
 
 function App() {
-  const {user, amount, place} = TRANSACTION_DATA[0];
   return (
     <div>
-      <Transaction user={user} place={place} amount={amount} />
+      {TRANSACTION_DATA.map((trans) => (
+        <Transaction
+          key={trans.id}
+          user={trans.user}
+          place={trans.place}
+          amount={trans.amount}
+        />
+      ))}
     </div>
   );
 }

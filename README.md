@@ -183,3 +183,8 @@ PS D:\DATA\GIT\FRONTENDWEB\frontendweb-budget-2526\budget>
 - data in `Transactions.jsx` kan uit js komen
 - data kan via attributes in `App.jsx` in de `props` doorgegeven worden
 - data komt nu uit de mock_data ipv hard coded , later uit de echte database
+- all data can be spreaded/mapped/destructured before given as attrributes. For readability destructuring is perhaps the most readable option. Or typescript?
+
+### Property 'key'
+
+- use the unique `id` as a key
