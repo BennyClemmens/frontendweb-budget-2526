@@ -180,4 +180,5 @@ PS D:\DATA\GIT\FRONTENDWEB\frontendweb-budget-2526\budget>
 
 ### React props
 
-- data in `Transactions.tsx` kan uit js komen
+- data in `Transactions.jsx` kan uit js komen
+- data kan via attributes in `App.jsx` in de `props` doorgegeven worden
