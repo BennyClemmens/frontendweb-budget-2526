@@ -188,3 +188,31 @@ PS D:\DATA\GIT\FRONTENDWEB\frontendweb-budget-2526\budget>
 ### Property 'key'
 
 - use the unique `id` as a key
+
+### Tailwind Css
+
+- installing
+
+```bash
+pnpm install tailwindcss @tailwindcss/vite
+```
+
+```bash
+PS D:\DATA\GIT\FRONTENDWEB\frontendweb-budget-2526\budget> pnpm install tailwindcss @tailwindcss/vite
+Packages: +31 -7
++++++++++++++++++++++++++++++++-------
+Progress: resolved 214, reused 124, downloaded 15, added 31, done
+
+dependencies:
++ @tailwindcss/vite 4.1.13
++ tailwindcss 4.1.13
+
+╭ Warning ───────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                            │
+│   Ignored build scripts: @tailwindcss/oxide.                                               │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed to run scripts.   │
+│                                                                                            │
+╰────────────────────────────────────────────────────────────────────────────────────────────╯
+
+Done in 10.1s using pnpm v10.17.0
+```
