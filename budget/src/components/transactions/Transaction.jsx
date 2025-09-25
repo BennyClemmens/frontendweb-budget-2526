@@ -1,3 +1,10 @@
 export default function Transaction() {
-  return <div>Benjamin gaf €200 uit bij Dranken Geers.</div>;
+  const user = 'Benjamin';
+  const amount = 200;
+  const place = 'Dranken Geers';
+  return (
+    <div>
+      {user} gaf €{amount} uit bij {place}
+    </div>
+  );
 }

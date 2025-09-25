@@ -177,3 +177,7 @@ PS D:\DATA\GIT\FRONTENDWEB\frontendweb-budget-2526\budget>
 ### Mock data
 
 - toegevoegd in `src/api/mock_data.js`
+
+### React props
+
+- data in `Transactions.tsx` kan uit js komen
