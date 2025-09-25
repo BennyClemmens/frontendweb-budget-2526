@@ -165,3 +165,11 @@ PS D:\DATA\GIT\FRONTENDWEB\frontendweb-budget-2526\budget>
 - moved global vscode user settings to workspace .vscode/settings.json
   - settings came with installing the software for the course
   - TODO: perhaps look into the prettier formatter and integrating those rules into the linter
+
+### Transaction
+
+- een `Transaction.jsx` aangemaakt
+
+### App.jsx
+
+- de default react app verswijst nu naar dit nieuw component (met nu nog hardcoded text)
