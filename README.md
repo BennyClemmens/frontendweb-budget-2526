@@ -182,3 +182,4 @@ PS D:\DATA\GIT\FRONTENDWEB\frontendweb-budget-2526\budget>
 
 - data in `Transactions.jsx` kan uit js komen
 - data kan via attributes in `App.jsx` in de `props` doorgegeven worden
+- data komt nu uit de mock_data ipv hard coded , later uit de echte database
