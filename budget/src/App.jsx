@@ -1,5 +1,5 @@
 import Transaction from './components/transactions/Transaction';
-import TRANSACTION_DATA from './api/mock_data';
+import { TRANSACTION_DATA } from './api/mock_data';
 
 function App() {
   return (
