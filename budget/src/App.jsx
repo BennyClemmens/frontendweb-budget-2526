@@ -4,7 +4,7 @@ import PlacesList from './components/places/PlacesList';
 
 function App() {
   return (
-    <div>
+    <div className="bg-amber-600 text-gray-900">
       <h1 className="text-2xl font-bold text-center mb-4">
         Mijn Budget App
       </h1>
