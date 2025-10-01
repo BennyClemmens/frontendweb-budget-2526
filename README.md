@@ -229,3 +229,62 @@ Done in 10.1s using pnpm v10.17.0
 
 - eigen project
 - [oefening todo app](https://github.com/HOGENT-frontendweb/frontendweb-ch1-solution)
+
+## 2. React state management
+
+### Voorbeeld - Overzicht van de places
+
+- added mock data for places in `api/mock_data.js`
+- update import statement `TRANSACTION_DATA` in `App.jsx`
+
+### Place component
+
+- added `src/components/places/Place.jsx`
+
+### PlacesList component
+
+- added `src/components/places/PlaceList.jsx`
+- added `PlacesList` component in `App.jsx`
+
+### Verwijderen van een place
+
+- added a (static) event handler on the remove button
+
+### Toevoegen van state aan de PlacesList component
+
+- adding state with the `useState` hook in `PlacesList`
+- using it in the `Place` component
+
+### StarRating component
+
+```bash
+pnpm add react-icons
+```
+
+```bash
+PS D:\DATA\GIT\FRONTENDWEB\frontendweb-budget-2526\budget> pnpm add react-icons
+
+   ╭───────────────────────────────────────────────╮
+   │                                               │
+   │     Update available! 10.17.0 → 10.17.1.      │
+   │     Changelog: https://pnpm.io/v/10.17.1      │
+   │                                               │
+   ╰───────────────────────────────────────────────╯
+
+Packages: +1
++
+Downloading react-icons@5.5.0: 22,22 MB/22,22 MB, done
+Progress: resolved 215, reused 139, downloaded 1, added 1, done
+
+dependencies:
++ react-icons 5.5.0
+
+Done in 3.1s using pnpm v10.17.0
+```
+
+- added `src/components/places/StarRating.jsx`
+
+### Oefening 2 - StarRating in Place component
+
+- added the `StarRating` to `Place` with a fixed number of 5 gold stars
+- new icon for remove button

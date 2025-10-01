@@ -19,7 +19,11 @@ const PlacesList = () => {
           )
           .map((p) => (
             <div key={p.id}>
-              <Place {...p} onDelete={handleDeletePlace} /> {/* id, name, rating */}
+              <Place
+                id={p.id}
+                name={p.name}
+                rating={p.rating}
+                onDelete={handleDeletePlace} />
             </div>
           ))}
       </div>
