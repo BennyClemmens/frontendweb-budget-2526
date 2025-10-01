@@ -302,3 +302,14 @@ Done in 3.1s using pnpm v10.17.0
 - pass the `rating` from `Place` to `StarRating` with `selectedStars` prop
 - add and use `selectedstars` in `StarRating`
 - pass `selected` to `Star`, calculating it
+
+### Oefening 3 - Event handler toevoegen
+
+- added `index` prop to `Star`
+- `handleClick` implemented and added to `onClick` of the icon
+
+### De rating aanpassen
+
+- `handleRatePlace` in `PlaceList` with props => Place => StarRating => Star
+- `id`added to `handleRate` in Place and with props => StarRating
+- in Star it's handled what star is clicked and => StarRating => Place => Placelist

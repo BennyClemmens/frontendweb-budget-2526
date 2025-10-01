@@ -5,6 +5,11 @@ import Place from './Place';
 const PlacesList = () => {
   const [places, setPlaces] = useState(PLACE_DATA);
 
+  const handleRatePlace = (id, rating) => {
+    const newPlaces = places.map((p) => (p.id === id ? { ...p, rating } : p));
+    setPlaces(newPlaces);
+  };
+
   const handleDeletePlace = (id) => {
     setPlaces((places) => places.filter((p) => p.id !== id));
   };
@@ -23,6 +28,7 @@ const PlacesList = () => {
                 id={p.id}
                 name={p.name}
                 rating={p.rating}
+                onRate={handleRatePlace}
                 onDelete={handleDeletePlace} />
             </div>
           ))}

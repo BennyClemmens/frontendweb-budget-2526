@@ -1,21 +1,25 @@
 import { IoStarSharp } from 'react-icons/io5';
 
-const Star = ({ selected = false, index }) => {
-  const handelClick = () => {
-    console.log(`you clicked star with index ${index}`);
+const Star = ({ selected = false, index, onSelect= (f) => f }) => {
+  const handleSelect = () => {
+    onSelect(index + 1);
   };
   return (
-    <IoStarSharp color={selected ? 'gold' : 'grey'} onClick={handelClick} />
+    <IoStarSharp color={selected ? 'gold' : 'grey'} onClick={handleSelect} />
   );
 };
 
-export default function StarRating({ totalStars = 5, selectedStars = 0 }) {
+export default function StarRating({ totalStars = 5, selectedStars = 0, onRate }) {
   const stars = [...new Array(totalStars)];
   return (
     <>
       <div className="flex">
         {stars.map((_, i) => (
-          <Star key={i} selected={selectedStars > i} index={i}/>
+          <Star key={i}
+            selected={selectedStars > i}
+            index={i}
+            onSelect={onRate}
+          />
         ))}
       </div>
       <p className="text-gray-700 mt-2">
