@@ -317,3 +317,9 @@ Done in 3.1s using pnpm v10.17.0
 ### Refactoring Transactions
 
 - `Transactions` uit `App.jsx` => `Transactionslist.jsx`
+
+### Input velden toevoegen a.d.h.v. controlled components
+
+- `input` field and `button` in `TransactionsList.jsx`
+- two states
+- `handler` for search (filter)
