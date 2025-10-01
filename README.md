@@ -313,3 +313,7 @@ Done in 3.1s using pnpm v10.17.0
 - `handleRatePlace` in `PlaceList` with props => Place => StarRating => Star
 - `id`added to `handleRate` in Place and with props => StarRating
 - in Star it's handled what star is clicked and => StarRating => Place => Placelist
+
+### Refactoring Transactions
+
+- `Transactions` uit `App.jsx` => `Transactionslist.jsx`

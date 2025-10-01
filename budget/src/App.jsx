@@ -1,21 +1,12 @@
 import Transaction from './components/transactions/Transaction';
 import { TRANSACTION_DATA } from './api/mock_data';
 import PlacesList from './components/places/PlacesList';
+import TransactionList from './components/transactions/TransactionsList';
 
 function App() {
   return (
     <div className="bg-amber-600 text-gray-900">
-      <h1 className="text-2xl font-bold text-center mb-4">
-        Mijn Budget App
-      </h1>
-      {TRANSACTION_DATA.map((trans) => (
-        <Transaction
-          key={trans.id}
-          user={trans.user}
-          place={trans.place}
-          amount={trans.amount}
-        />
-      ))}
+      <TransactionList />
       <PlacesList />
     </div>
   );
