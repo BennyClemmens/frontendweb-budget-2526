@@ -288,3 +288,17 @@ Done in 3.1s using pnpm v10.17.0
 
 - added the `StarRating` to `Place` with a fixed number of 5 gold stars
 - new icon for remove button
+
+### Een variabel aantal sterren
+
+- added a `totalStars` prop in `StarRating`
+
+### De kleur van de sterren kan verschillen
+
+- added a `selected` prop in `Star`
+
+### Rating functionaliteit afwerken
+
+- pass the `rating` from `Place` to `StarRating` with `selectedStars` prop
+- add and use `selectedstars` in `StarRating`
+- pass `selected` to `Star`, calculating it

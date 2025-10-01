@@ -10,8 +10,7 @@ const Place = ({ id, name, rating, onDelete = (f) => f }) => {
       <h5 className="text-xl font-medium mb-2">{name}</h5>
       <button className='mt-6 py-2 px-2.5 rounded-md bg-blue-600 text-white' onClick={handleDelete}><IoTrashOutline />
       </button>
-      <h5 className="text-xl font-medium mb-2">rating: {rating}</h5>
-      <StarRating />
+      <StarRating selectedStars={rating} />
     </div>
   );
 };
