@@ -333,3 +333,7 @@ Done in 3.1s using pnpm v10.17.0
 - created `TransactionsTable`
 - refactored `TransactionsList` to use this
 - `Transaction` refactored to now return a table row
+
+### Oefening 4 - README
+
+- added info to start the app in development
