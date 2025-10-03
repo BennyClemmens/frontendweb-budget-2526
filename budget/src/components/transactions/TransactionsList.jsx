@@ -1,6 +1,7 @@
 import Transaction from './Transaction';
 import { TRANSACTION_DATA } from '../../api/mock_data';
 import { useState, useMemo } from 'react';
+import TransactionsTable from './TransactionsTable';
 
 export default function TransactionList() {
   const [text, setText] = useState('');
@@ -37,14 +38,9 @@ export default function TransactionList() {
           Search
         </button>
       </div>
-      {filteredTransactions.map((trans) => (
-        <Transaction
-          key={trans.id}
-          user={trans.user}
-          place={trans.place}
-          amount={trans.amount}
-        />
-      ))}
+      <div className='m-4'>
+        <TransactionsTable transactions={filteredTransactions} />
+      </div>
     </>
   );
 }

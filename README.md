@@ -324,6 +324,12 @@ Done in 3.1s using pnpm v10.17.0
 - two states
 - `handler` for search (filter)
 
-### Verbeteren van de performatie
+### useMemo hook
 
 - `usememo` hook added so the filter only renders when `search` is changed
+
+### Weergave tabel met transacties
+
+- created `TransactionsTable`
+- refactored `TransactionsList` to use this
+- `Transaction` refactored to now return a table row
