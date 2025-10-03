@@ -323,3 +323,7 @@ Done in 3.1s using pnpm v10.17.0
 - `input` field and `button` in `TransactionsList.jsx`
 - two states
 - `handler` for search (filter)
+
+### Verbeteren van de performatie
+
+- `usememo` hook added so the filter only renders when `search` is changed

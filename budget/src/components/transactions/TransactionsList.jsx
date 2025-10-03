@@ -1,15 +1,20 @@
 import Transaction from './Transaction';
 import { TRANSACTION_DATA } from '../../api/mock_data';
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 
 export default function TransactionList() {
   const [text, setText] = useState('');
   const [search, setSearch] = useState('');
 
-  const filteredTransactions = TRANSACTION_DATA.filter((t) => {
-    console.log('filtering...');
-    return t.place.name.toLowerCase().includes(search.toLowerCase());
-  });
+  const filteredTransactions = useMemo(
+    () =>
+      TRANSACTION_DATA.filter((t) => {
+        console.log('filtering...');
+        return t.place.name.toLowerCase().includes(search.toLowerCase());
+      })
+    ,
+    [search],
+  );
 
   return (
     <>
