@@ -1,5 +1,3 @@
-import Transaction from './components/transactions/Transaction';
-import { TRANSACTION_DATA } from './api/mock_data';
 import PlacesList from './components/places/PlacesList';
 import TransactionList from './components/transactions/TransactionsList';
 
