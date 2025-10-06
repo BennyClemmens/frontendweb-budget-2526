@@ -1,5 +1,5 @@
-import PlacesList from './components/places/PlacesList';
-import TransactionList from './components/transactions/TransactionsList';
+import PlacesList from './pages/places/PlacesList';
+import TransactionList from './pages/transactions/TransactionsList';
 
 function App() {
   return (

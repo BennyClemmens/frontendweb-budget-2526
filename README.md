@@ -366,3 +366,23 @@ Done in 882ms using pnpm v10.17.0
 ```
 
 - used the router in `main.jsx`
+
+### Routers definiëren
+
+- refactoring some components => `pages`
+- faker package for lorem ipsum
+
+```bash
+PS D:\DATA\GIT\FRONTENDWEB\frontendweb-budget-2526\budget> pnpm add @faker-js/faker
+Packages: +1
++
+Progress: resolved 219, reused 143, downloaded 1, added 1, done
+
+dependencies:
++ @faker-js/faker 10.0.0
+
+Done in 824ms using pnpm v10.17.0
+```
+
+- `About.jsx`and `NotFound.jsx` added
+- added the extra routes to `main.jsx`
