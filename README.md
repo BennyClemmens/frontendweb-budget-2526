@@ -337,3 +337,32 @@ Done in 3.1s using pnpm v10.17.0
 ### Oefening 4 - README
 
 - added info to start the app in development
+
+## 3. React Router
+
+### React Router
+
+- installed with pnpm
+
+```bash
+PS D:\DATA\GIT\FRONTENDWEB\frontendweb-budget-2526\budget> pnpm add react-router
+
+   ╭───────────────────────────────────────────────╮
+   │                                               │
+   │     Update available! 10.17.0 → 10.18.0.      │
+   │     Changelog: https://pnpm.io/v/10.18.0      │
+   │   To update, run: corepack use pnpm@10.18.0   │
+   │                                               │
+   ╰───────────────────────────────────────────────╯
+
+Packages: +3
++++
+Progress: resolved 218, reused 140, downloaded 3, added 3, done
+
+dependencies:
++ react-router 7.9.3
+
+Done in 882ms using pnpm v10.17.0
+```
+
+- used the router in `main.jsx`
