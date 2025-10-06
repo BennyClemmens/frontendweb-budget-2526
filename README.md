@@ -390,3 +390,7 @@ Done in 824ms using pnpm v10.17.0
 ### Navigeren tussen pagina's
 
 - using `Link` in `App.jsx`
+
+### Route properties
+
+- `useLocation` added in Notfound.jsx`
