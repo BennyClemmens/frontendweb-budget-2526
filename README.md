@@ -394,3 +394,10 @@ Done in 824ms using pnpm v10.17.0
 ### Route properties
 
 - `useLocation` added in Notfound.jsx`
+
+### Routes nesten
+
+- `Link` components in `About.jsx`
+- Subpages components embeded in `About.jsx`
+- child routes added in `main.jsx`
+- `Outlet`component as a placeholder
