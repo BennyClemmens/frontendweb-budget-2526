@@ -386,3 +386,7 @@ Done in 824ms using pnpm v10.17.0
 
 - `About.jsx`and `NotFound.jsx` added
 - added the extra routes to `main.jsx`
+
+### Navigeren tussen pagina's
+
+- using `Link` in `App.jsx`
