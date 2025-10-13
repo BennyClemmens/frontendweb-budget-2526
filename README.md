@@ -405,3 +405,16 @@ Done in 824ms using pnpm v10.17.0
 ### Redirects
 
 - `Navigate` toegevoegd in `main.jsx` om te navigeren
+
+### URL parameters
+
+- `PlaceDetail.jsx` met later de transacties van een plaats, indien gevonden
+- nieuwe route voor een url parameter `:id` in `main.jsx`
+- oefening 1: surfen vanuit `Place` door te klinkken op de naam van de place
+
+### Layout component
+
+- holder in `Layout.jsx`
+- navbar zelf in `NavBar.jsx`
+- aanpassing in `main.jsx` waar alle paden nu kinderen van `Layout` zijn
+- `App.jsx` deleted
