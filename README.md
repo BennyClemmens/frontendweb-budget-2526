@@ -431,3 +431,7 @@ Done in 824ms using pnpm v10.17.0
 ### Navigeren vanuit code
 
 - `useNavigate` hook in `NotFound.jsx`
+
+### Cusom styles
+
+- `h1` added in `index.css` and refactored elsewhere

@@ -3,7 +3,7 @@ import { Outlet, Link } from 'react-router';
 
 const About = () => (
   <div>
-    <h1 className="text-4xl mb-4">Over ons</h1>
+    <h1>Over ons</h1>
     <div>
       <p className="mb-4">{faker.lorem.paragraph(10)}</p>
       <p>{faker.lorem.paragraph(10)}</p>
@@ -25,21 +25,21 @@ const About = () => (
 
 export const Services = () => (
   <div>
-    <h1 className="text-4xl mb-4">Onze diensten</h1>
+    <h1>Onze diensten</h1>
     <p>{faker.lorem.paragraph(30)}</p>
   </div>
 );
 
 export const History = () => (
   <div>
-    <h1 className="text-4xl mb-4">Geschiedenis</h1>
+    <h1>Geschiedenis</h1>
     <p>{faker.lorem.paragraph(40)}</p>
   </div>
 );
 
 export const Location = () => (
   <div>
-    <h1 className="text-4xl mb-4">Locatie</h1>
+    <h1>Locatie</h1>
     <p>{faker.lorem.paragraph(50)}</p>
   </div>
 );

@@ -10,7 +10,7 @@ const PlaceDetail = () => {
   if (!place) {
     return (
       <div>
-        <h1 className='text-4xl mb-4'>Plaats niet gevonden</h1>
+        <h1>Plaats niet gevonden</h1>
         <p>Er is geen plaats met id {id}</p>
       </div>
     );
@@ -18,7 +18,7 @@ const PlaceDetail = () => {
 
   return (
     <div>
-      <h1 className='text-4xl mb-4'>{place.name}</h1>
+      <h1>{place.name}</h1>
       <p>Hier komen later de transacties van {place.name}</p>
     </div>
   );

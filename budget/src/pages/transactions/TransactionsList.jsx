@@ -18,7 +18,7 @@ export default function TransactionList() {
 
   return (
     <>
-      <h1 className="text-4xl mb-4">Transactions</h1>
+      <h1>Transactions</h1>
       <div className='flex mb-3 w-1/2 gap-2 mx-4'>
         <input
           type='search'
