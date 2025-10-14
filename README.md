@@ -418,3 +418,8 @@ Done in 824ms using pnpm v10.17.0
 - navbar zelf in `NavBar.jsx`
 - aanpassing in `main.jsx` waar alle paden nu kinderen van `Layout` zijn
 - `App.jsx` deleted
+
+### Actieve link aanduiden & refactoring NavBar
+
+- m.b.v `NavLink` component in `NavBar.jsx`
+- `Logo` inline component voor het logo
