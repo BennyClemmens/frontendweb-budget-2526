@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router';
+import { Outlet, ScrollRestoration } from 'react-router';
 import NavBar from '../components/NavBar';
 
 export default function Layout() {
@@ -8,6 +8,7 @@ export default function Layout() {
       <div className='p-4'>
         <Outlet />
       </div>
+      <ScrollRestoration />
     </div>
   );
 }

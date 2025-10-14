@@ -69,9 +69,9 @@ export default function Navbar() {
           </div>
           <div>
             <ul>
-              <NavItem tp='/transactions' options="block p-4 text-sm font-semibold">Transactions</NavItem>
-              <NavItem tp='/places' options="block p-4 text-sm font-semibold">Places</NavItem>
-              <NavItem tp='/about' options="block p-4 text-sm font-semibold">About</NavItem>
+              <NavItem to='/transactions' options="block p-4 text-sm font-semibold">Transactions</NavItem>
+              <NavItem to='/places' options="block p-4 text-sm font-semibold">Places</NavItem>
+              <NavItem to='/about' options="block p-4 text-sm font-semibold">About</NavItem>
             </ul>
           </div>
         </nav>

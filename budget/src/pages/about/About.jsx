@@ -26,21 +26,21 @@ const About = () => (
 export const Services = () => (
   <div>
     <h1 className="text-4xl mb-4">Onze diensten</h1>
-    <p>{faker.lorem.paragraph(10)}</p>
+    <p>{faker.lorem.paragraph(30)}</p>
   </div>
 );
 
 export const History = () => (
   <div>
     <h1 className="text-4xl mb-4">Geschiedenis</h1>
-    <p>{faker.lorem.paragraph(10)}</p>
+    <p>{faker.lorem.paragraph(40)}</p>
   </div>
 );
 
 export const Location = () => (
   <div>
     <h1 className="text-4xl mb-4">Locatie</h1>
-    <p>{faker.lorem.paragraph(10)}</p>
+    <p>{faker.lorem.paragraph(50)}</p>
   </div>
 );
 

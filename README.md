@@ -423,3 +423,7 @@ Done in 824ms using pnpm v10.17.0
 
 - m.b.v `NavLink` component in `NavBar.jsx`
 - `Logo` inline component voor het logo
+
+### Scroll restoration
+
+- auto scroll restoration added to `Layout` component
