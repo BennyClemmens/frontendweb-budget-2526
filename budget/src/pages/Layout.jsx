@@ -1,10 +1,10 @@
 import { Outlet, ScrollRestoration } from 'react-router';
-import NavBar from '../components/NavBar';
+import Navbar from '../components/Navbar';
 
 export default function Layout() {
   return (
     <div className='container-xl'>
-      <NavBar />
+      <Navbar />
       <div className='p-4'>
         <Outlet />
       </div>

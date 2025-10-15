@@ -8,7 +8,7 @@ import PlacesList from './pages/places/PlacesList.jsx';
 import NotFound from './pages/NotFound.jsx';
 import About, { Services, History, Location } from './pages/about/About.jsx';
 import PlaceDetail from './pages/places/PlaceDetail.jsx';
-import Layout, {  } from './pages/Layout.jsx';
+import Layout from './pages/Layout.jsx';
 
 const router = createBrowserRouter([
   {

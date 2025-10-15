@@ -3,12 +3,15 @@ import StarRating from './StarRating';
 import { Link } from 'react-router';
 
 const Place = ({ id, name, rating, onDelete = (f) => f, onRate = (f) => f }) => {
+
   const handleRate = (newRating) => {
     onRate(id, newRating);
   };
+
   const handleDelete = () => {
     onDelete(id);
   };
+
   return (
     <div className="p-3 outline outline-black/5 rounded-md shadow-lg mb-4">
       <h5 className="text-xl font-medium mb-2">
@@ -18,7 +21,7 @@ const Place = ({ id, name, rating, onDelete = (f) => f, onRate = (f) => f }) => 
       </button>
       <StarRating
         selectedStars={rating}
-        onRate={handleRate}      
+        onRate={handleRate}
       />
     </div>
   );

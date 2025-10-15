@@ -1,8 +1,8 @@
-# Budget app - Front end
+# Budget app
 
 ## Setup
 
-Install all dependencies using the following command (in the `budget` folder):
+Install all dependencies using the following command:
 
 ```bash
 pnpm install
@@ -12,10 +12,9 @@ pnpm install
 
 ### Development
 
-- Start the app using the following command (in the `budget` folder):
+- Start the app using `pnpm dev`. It runs on <http://localhost:5137> by default.
 
-```bash
-pnpm dev
-```
+### Production
 
-It runs on <http://localhost:5137> which is the default.
+- Build the app using `pnpm build`. This will generate a `dist` folder with the compiled files.
+- Serve this folder using a static service like Apache, Nginx or others.

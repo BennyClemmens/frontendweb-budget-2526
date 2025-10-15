@@ -9,7 +9,7 @@ export default function TransactionList() {
   const filteredTransactions = useMemo(
     () =>
       TRANSACTION_DATA.filter((t) => {
-        console.log('filtering...');
+        console.log('filtering, TODO: remove, logging for render learning...');
         return t.place.name.toLowerCase().includes(search.toLowerCase());
       })
     ,

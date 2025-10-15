@@ -5,7 +5,7 @@ import { BsFillPiggyBankFill } from 'react-icons/bs';
 
 const NavItem = ({ to, children, options}) => {
   return (
-    <li className='mb-1'>
+    <li className="mb-1">
       <NavLink className={`text-gray-400 rounded aria-[current=page]:text-blue-800 ${options}`}
         to={to}>{children}</NavLink>
     </li>
@@ -14,7 +14,7 @@ const NavItem = ({ to, children, options}) => {
 
 const Logo = () => {
   return (
-    <Link to="/" className="mr-auto flex items-center space-x-2 text-blue-600 hover:text-blue-800">
+    <Link to="/transactions" className="mr-auto flex items-center space-x-2 text-blue-600 hover:text-blue-800">
       <BsFillPiggyBankFill size={28} className="text-blue-600" />
       <span className="font-semibold text-lg">Budget</span>
     </Link>
@@ -38,7 +38,7 @@ export default function Navbar() {
         </div>
 
         <div className="lg:hidden">
-          <button className="flex items-center text-blue-600 p-3" onClick={toggleNavbar}>
+          <button className="navbar-burger flex items-center text-blue-600 p-3" onClick={toggleNavbar}>
             <svg className="block h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
               <title>Mobile menu</title>
               <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
@@ -47,9 +47,9 @@ export default function Navbar() {
         </div>
         <ul className="hidden absolute top-1/2 left-1/2
         transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:items-center lg:w-auto lg:space-x-6">
-          <NavItem to='/about'>About</NavItem>
-          <NavItem to='/transactions'>Transactions</NavItem>
-          <NavItem to='/places'>Places</NavItem>
+          <NavItem to="/about">About</NavItem>
+          <NavItem to="/transactions">Transactions</NavItem>
+          <NavItem to="/places">Places</NavItem>
         </ul>
       </nav>
       <div className={`relative z-50 ${isNavbarOpen ? 'block' : 'hidden'}`}>
@@ -69,9 +69,9 @@ export default function Navbar() {
           </div>
           <div>
             <ul>
-              <NavItem to='/transactions' options="block p-4 text-sm font-semibold">Transactions</NavItem>
-              <NavItem to='/places' options="block p-4 text-sm font-semibold">Places</NavItem>
-              <NavItem to='/about' options="block p-4 text-sm font-semibold">About</NavItem>
+              <NavItem to="/transactions" options="block p-4 text-sm font-semibold">Transactions</NavItem>
+              <NavItem to="/places" options="block p-4 text-sm font-semibold">Places</NavItem>
+              <NavItem to="/about" options="block p-4 text-sm font-semibold">About</NavItem>
             </ul>
           </div>
         </nav>
