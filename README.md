@@ -482,3 +482,8 @@ Done in 2.8s using pnpm v10.17.0
 - generic Error.jsx component
 - AsyncData.jsx component
 - all this implemented in TransactionsList.jsx
+
+### GET /api/transactions (swr)
+
+- transactions.js => generic index.js
+- omvormen naar swr cfr instructies cursus
