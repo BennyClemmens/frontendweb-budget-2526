@@ -10,6 +10,12 @@ pnpm install
 
 ## Start the app
 
+- Make sure you have a `.env` file in the root of the project with this content:
+
+```dotenv
+VITE_API_URL='http://localhost:3000/api'
+```
+
 ### Development
 
 - Start the app using `pnpm dev`. It runs on <http://localhost:5137> by default.

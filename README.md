@@ -494,3 +494,9 @@ Done in 2.8s using pnpm v10.17.0
 - remove key added to `Transaction` component
 - TransactionsTable: extra colum in table and delete function passed through
 - TransactionsList: useMutation hook
+
+### Het .env bestand
+
+- .env in root met content: `VITE_API_URL='http://localhost:3000/api'`
+- imported in `api/index.js`
+- README.md aangepast
