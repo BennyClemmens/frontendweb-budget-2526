@@ -487,3 +487,10 @@ Done in 2.8s using pnpm v10.17.0
 
 - transactions.js => generic index.js
 - omvormen naar swr cfr instructies cursus
+
+### DELETE /api/transactions/:id
+
+- added `deleteById` in `api/index.js`
+- remove key added to `Transaction` component
+- TransactionsTable: extra colum in table and delete function passed through
+- TransactionsList: useMutation hook
