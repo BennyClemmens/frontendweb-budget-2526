@@ -475,3 +475,10 @@ Done in 2.8s using pnpm v10.17.0
 - fetching data with axios in `src/api/transactions.js`
 - gebruik in useEffect van TransactiosList.jsx
 - keeping the state of the transactions
+
+### Laadindicator en foutafhandeling
+
+- generic Loader.jsx component
+- generic Error.jsx component
+- AsyncData.jsx component
+- all this implemented in TransactionsList.jsx
