@@ -435,3 +435,29 @@ Done in 824ms using pnpm v10.17.0
 ### Cusom styles
 
 - `h1` added in `index.css` and refactored elsewhere
+
+## 4. Data ophalen uit een REST API
+
+### Installing necessary packages
+
+```bash
+PS D:\DATA\GIT\FRONTENDWEB\frontendweb-budget-2526\budget> pnpm add axios swr
+
+   ╭───────────────────────────────────────────────╮
+   │                                               │
+   │     Update available! 10.17.0 → 10.19.0.      │
+   │     Changelog: https://pnpm.io/v/10.19.0      │
+   │   To update, run: corepack use pnpm@10.19.0   │
+   │                                               │
+   ╰───────────────────────────────────────────────╯
+
+Packages: +26
+++++++++++++++++++++++++++
+Progress: resolved 245, reused 167, downloaded 3, added 26, done
+
+dependencies:
++ axios 1.12.2
++ swr 2.3.6
+
+Done in 2.8s using pnpm v10.17.0
+```
