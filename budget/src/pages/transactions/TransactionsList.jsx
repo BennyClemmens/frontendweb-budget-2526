@@ -7,8 +7,9 @@ export default function TransactionList() {
   const [search, setSearch] = useState('');
 
   useEffect(() => {
-    console.log('transactions are rendered');
-  });
+    console.log('transactions after initial render or search changed');
+    return () => console.log('unmounted...');
+  }, [search]);
 
   const filteredTransactions = useMemo(
     () =>

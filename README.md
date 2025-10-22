@@ -465,3 +465,7 @@ Done in 2.8s using pnpm v10.17.0
 ### useEffect
 
 - `useEffect` in `TransactionList`
+
+### Effect dependencies
+
+- dependency array and cleanup function
