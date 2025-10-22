@@ -1,10 +1,14 @@
 import { TRANSACTION_DATA } from '../../api/mock_data';
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import TransactionsTable from '../../components/transactions/TransactionsTable';
 
 export default function TransactionList() {
   const [text, setText] = useState('');
   const [search, setSearch] = useState('');
+
+  useEffect(() => {
+    console.log('transactions are rendered');
+  });
 
   const filteredTransactions = useMemo(
     () =>
