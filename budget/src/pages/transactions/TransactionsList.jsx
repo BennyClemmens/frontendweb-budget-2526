@@ -1,24 +1,29 @@
-import { TRANSACTION_DATA } from '../../api/mock_data';
 import { useState, useMemo, useEffect } from 'react';
 import TransactionsTable from '../../components/transactions/TransactionsTable';
+import * as transactionsApi from '../../api/transactions';
 
 export default function TransactionList() {
+  const [transactions, setTransactions] = useState([]);
   const [text, setText] = useState('');
   const [search, setSearch] = useState('');
 
   useEffect(() => {
-    console.log('transactions after initial render or search changed');
-    return () => console.log('unmounted...');
-  }, [search]);
+    const fetchTransactions = async () => {
+      const items = await transactionsApi.getAll();
+      setTransactions(items);
+    };
+
+    fetchTransactions();
+  }, []);
 
   const filteredTransactions = useMemo(
     () =>
-      TRANSACTION_DATA.filter((t) => {
+      transactions.filter((t) => {
         console.log('filtering, TODO: remove, logging for render learning...');
         return t.place.name.toLowerCase().includes(search.toLowerCase());
       })
     ,
-    [search],
+    [search, transactions],
   );
 
   return (

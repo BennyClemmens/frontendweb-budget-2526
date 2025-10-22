@@ -469,3 +469,9 @@ Done in 2.8s using pnpm v10.17.0
 ### Effect dependencies
 
 - dependency array and cleanup function
+
+### GET /api/transactions (useEffect)
+
+- fetching data with axios in `src/api/transactions.js`
+- gebruik in useEffect van TransactiosList.jsx
+- keeping the state of the transactions
