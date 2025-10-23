@@ -526,3 +526,9 @@ Done in 2.8s using pnpm v10.17.0
 
 - From copypasted
 - gebruikt in pagina, places opgehaald
+
+### React-hook-form
+
+- package added
+- useForm used
+- default value used

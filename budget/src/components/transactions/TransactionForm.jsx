@@ -1,12 +1,60 @@
+import { useForm } from 'react-hook-form';
+
+const EMPTY_TRANSACTION = {
+  id: undefined,
+  amount: undefined,
+  date: new Date(),
+  user: {
+    id: '',
+    name: '',
+  },
+  place: {
+    id: '',
+    name: '',
+  },
+};
+
+const toDateInputString = (date) => {
+  // ISO String without the trailing 'Z' is fine 🙄
+  // (toISOString returns something like 2020-12-05T14:15:74Z,
+  // datetime-local HTML5 input elements expect 2020-12-05T14:15:74, without the (timezone) Z)
+  //
+  // the best thing about standards is that we have so many to chose from!
+  if (!date) return null;
+  if (typeof date !== Object) {
+    date = new Date(date);
+  }
+  let asString = date.toISOString();
+  return asString.substring(0, asString.indexOf('T'));
+};
+
 export default function TransactionForm({ places = [] }) {
+  const transaction = EMPTY_TRANSACTION;
+
+  const { register, handleSubmit, reset } = useForm({
+    defaultValues: {
+      date: toDateInputString(transaction?.date),
+      placeId: transaction?.place.id,
+      amount: transaction?.amount,
+      userId: transaction?.user.id,
+    },
+  });
+
+  const onSubmit = (values) => {
+    console.log(JSON.stringify(values));
+    // Nieuwe transactie moet nog worden opgeslagen
+    reset();
+  };
+
   return (
     <>
-      <form>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div className='mb-3'>
           <label htmlFor='userId' className="block text-sm/6 font-medium text-gray-900">
             User id
           </label>
           <input
+            {...register('userId')}
             id='userId'
             name='userId'
             type='number'
@@ -21,6 +69,7 @@ export default function TransactionForm({ places = [] }) {
             Date
           </label>
           <input
+            {...register('date')}
             id='date'
             name='date'
             type='date'
@@ -34,11 +83,15 @@ export default function TransactionForm({ places = [] }) {
           <label htmlFor='places' className="block text-sm/6 font-medium text-gray-900">
             Place
           </label>
-          <select id='placeId' name='placeId' className="w-full appearance-none
+          <select
+            {...register('placeId')}
+            id='placeId'
+            name='placeId'
+            className="w-full appearance-none
            rounded-md bg-white py-1.5 pr-8 pl-3 text-base text-gray-900
            outline-1 -outline-offset-1 outline-gray-300 focus:outline-2
            focus:-outline-offset-2 focus:outline-blue-600 sm:text-sm/6"
-          required>
+            required>
             <option value='' disabled>
               -- Select a place --
             </option>
@@ -55,6 +108,7 @@ export default function TransactionForm({ places = [] }) {
             Amount
           </label>
           <input
+            {...register('amount')}
             id='amount'
             name='amount'
             type='number'
