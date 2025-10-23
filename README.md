@@ -532,3 +532,4 @@ Done in 2.8s using pnpm v10.17.0
 - package added
 - useForm used
 - default value used
+- validation client side (Oefening 4: for all input fields)

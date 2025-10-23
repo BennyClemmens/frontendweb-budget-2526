@@ -2,6 +2,7 @@ import useSWR from 'swr';
 import { getAll } from '../../api';
 import TransactionForm from '../../components/transactions/TransactionForm';
 import AsyncData from '../../components/AsyncData';
+import { useParams } from 'react-router';
 
 export default function AddOrEditTransaction() {
   const {
@@ -10,9 +11,11 @@ export default function AddOrEditTransaction() {
     isLoading: placesLoading,
   } = useSWR('places', getAll);
 
+  const { id } = useParams();
+
   return (
     <div className='w-full max-w-sm'>
-      <h1>Add/Edit transaction</h1>
+      <h1>{id ? 'Edit' : 'Add'} transaction</h1>
 
       <AsyncData error={placesError} loading={placesLoading}>
 

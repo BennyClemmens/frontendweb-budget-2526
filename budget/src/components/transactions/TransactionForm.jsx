@@ -28,10 +28,39 @@ const toDateInputString = (date) => {
   return asString.substring(0, asString.indexOf('T'));
 };
 
+const validationRules = {
+  userId: {
+    required: 'User is required',
+    min: { value: 1, message: 'UserId must be minimum 1' },
+    valueAsNumber:true,
+  },
+  date: {
+    required: 'Date is required',
+    valueAsDate: true,
+    validate: (value) => {
+      if (value >new Date()) return 'Date cannot be in the future';
+      return null;
+    },
+  },
+  placeId: {
+    valueAsNumber: true,
+    required: 'Place is required',
+  },
+  amount: {
+    required: 'Amount is required',
+    valueAsNumber: true,
+    validate: (value) => {
+      if (value === 0) return '0 is not a valid amount';
+      return null;
+    },
+  },
+};
+
 export default function TransactionForm({ places = [] }) {
   const transaction = EMPTY_TRANSACTION;
 
-  const { register, handleSubmit, reset } = useForm({
+  const { register, handleSubmit, formState: { errors, isValid }, reset } = useForm({
+    mode: 'onBlur',
     defaultValues: {
       date: toDateInputString(transaction?.date),
       placeId: transaction?.place.id,
@@ -41,6 +70,7 @@ export default function TransactionForm({ places = [] }) {
   });
 
   const onSubmit = (values) => {
+    if (!isValid) return;
     console.log(JSON.stringify(values));
     // Nieuwe transactie moet nog worden opgeslagen
     reset();
@@ -54,7 +84,7 @@ export default function TransactionForm({ places = [] }) {
             User id
           </label>
           <input
-            {...register('userId')}
+            {...register('userId', validationRules.userId)}
             id='userId'
             name='userId'
             type='number'
@@ -63,13 +93,14 @@ export default function TransactionForm({ places = [] }) {
             placeholder='userid'
             required
           />
+          {errors.userId && <p className="text-red-500 text-sm mt-1">{errors.userId.message}</p> }
         </div>
         <div className='mb-3'>
           <label htmlFor='date' className="block text-sm/6 font-medium text-gray-900">
             Date
           </label>
           <input
-            {...register('date')}
+            {...register('date', validationRules.date)}
             id='date'
             name='date'
             type='date'
@@ -84,7 +115,7 @@ export default function TransactionForm({ places = [] }) {
             Place
           </label>
           <select
-            {...register('placeId')}
+            {...register('placeId', validationRules.placeId)}
             id='placeId'
             name='placeId'
             className="w-full appearance-none
@@ -108,7 +139,7 @@ export default function TransactionForm({ places = [] }) {
             Amount
           </label>
           <input
-            {...register('amount')}
+            {...register('amount', validationRules.amount)}
             id='amount'
             name='amount'
             type='number'
@@ -120,7 +151,7 @@ export default function TransactionForm({ places = [] }) {
 
         <div className='flex justify-end'>
           <button type='submit' className='py-2 px-2.5 rounded-md text-white bg-blue-600'>
-            Add/edit transaction
+            {transaction?.id ? 'Save' : 'Add'} transaction
           </button>
         </div>
       </form>
