@@ -8,10 +8,17 @@ export const getAll = async (url) => {
 };
 
 export const deleteById = async (url, { arg: id }) => {
+  //console.log(`deletebyId aangeroepen met url ${url} en id ${JSON.stringify(id)} als arg`);
   await axios.delete(`${baseUrl}/${url}/${id}`);
 };
 
 export const getById = async (url) => {
   const {data} = await axios.get(`${baseUrl}/${url}`);
   return data;
+};
+
+export const updateById = async (url, { arg: body }) => {
+  const { id, ...values } = body;
+  //console.log(`updateById aangeroepen met url ${url} en body ${JSON.stringify(body)} als arg`);
+  await axios.put(`${baseUrl}/${url}/${id}`, values);
 };

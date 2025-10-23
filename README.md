@@ -504,3 +504,6 @@ Done in 2.8s using pnpm v10.17.0
 ### Oefening 4 - PlacesList via API
 
 - PlaceDetail & getbyID
+- PlaceCards holds the list now
+- PlaceList now talks to database using SWR for get, delete, update
+- fixes for passing props and states

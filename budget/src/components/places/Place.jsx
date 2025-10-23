@@ -5,7 +5,8 @@ import { Link } from 'react-router';
 const Place = ({ id, name, rating, onDelete = (f) => f, onRate = (f) => f }) => {
 
   const handleRate = (newRating) => {
-    onRate(id, newRating);
+    // console.log(`rating was clicked with ${newRating}`);
+    onRate({id, rating: newRating});
   };
 
   const handleDelete = () => {

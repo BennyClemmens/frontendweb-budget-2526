@@ -1,6 +1,7 @@
 import { useParams } from 'react-router';
-import useSWR from 'swr';
-import { getById } from '../../api';
+import useSWR, { mutate } from 'swr';
+import useSWRMutation from 'swr/mutation';
+import { getById, deleteById } from '../../api';
 import AsyncData from '../../components/AsyncData';
 import TransactionsTable from '../../components/transactions/TransactionsTable';
 
@@ -14,6 +15,14 @@ const PlaceDetail = () => {
     isLoading: placeLoading,
   } = useSWR(id ? `places/${idAsNumber}` : null, getById);
 
+  const { trigger: deleteTransaction, error: deleteError } = useSWRMutation(
+    'transactions',
+    deleteById,
+    {
+      onSuccess: () => mutate(`places/${idAsNumber}`),
+    },
+  );
+
   if (!place) {
     return (
       <div>
@@ -25,9 +34,12 @@ const PlaceDetail = () => {
 
   return (
     <div>
-      <AsyncData loading={placeLoading} error={placeError}>
+      <AsyncData loading={placeLoading} error={placeError || deleteError}>
         <h1>Place {place.name}</h1>
-        <TransactionsTable transactions={place.transactions} />
+        <TransactionsTable
+          transactions={place.transactions}
+          onDelete={deleteTransaction}
+        />
       </AsyncData>
     </div>
   );
