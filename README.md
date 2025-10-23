@@ -516,3 +516,8 @@ Done in 2.8s using pnpm v10.17.0
 - bijkomende routes in `main.jsx`:
   - `/transactions/add`
   - `/transactions/edit/:id`
+
+### Oefening 2 - Toevoegen van knoppen
+
+- knop 'new' op list
+- knop potloodje op Transaction

@@ -1,7 +1,10 @@
 import { useParams } from 'react-router';
-import useSWR, { mutate } from 'swr';
-import useSWRMutation from 'swr/mutation';
-import { getById, deleteById } from '../../api';
+import useSWR from 'swr';
+// import useSWRMutation from 'swr/mutation';
+import {
+  getById,
+  // , deleteById
+} from '../../api';
 import AsyncData from '../../components/AsyncData';
 import TransactionsTable from '../../components/transactions/TransactionsTable';
 
@@ -15,13 +18,13 @@ const PlaceDetail = () => {
     isLoading: placeLoading,
   } = useSWR(id ? `places/${idAsNumber}` : null, getById);
 
-  const { trigger: deleteTransaction, error: deleteError } = useSWRMutation(
-    'transactions',
-    deleteById,
-    {
-      onSuccess: () => mutate(`places/${idAsNumber}`),
-    },
-  );
+  // const { trigger: deleteTransaction, error: deleteError } = useSWRMutation(
+  //   'transactions',
+  //   deleteById,
+  //   {
+  //     onSuccess: () => mutate(`places/${idAsNumber}`),
+  //   },
+  // );
 
   if (!place) {
     return (
@@ -34,11 +37,12 @@ const PlaceDetail = () => {
 
   return (
     <div>
-      <AsyncData loading={placeLoading} error={placeError || deleteError}>
+      {/* <AsyncData loading={placeLoading} error={placeError || deleteError}> */}
+      <AsyncData loading={placeLoading} error={placeError}>
         <h1>Place {place.name}</h1>
         <TransactionsTable
           transactions={place.transactions}
-          onDelete={deleteTransaction}
+          // onDelete={deleteTransaction}
         />
       </AsyncData>
     </div>
