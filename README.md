@@ -533,3 +533,8 @@ Done in 2.8s using pnpm v10.17.0
 - useForm used
 - default value used
 - validation client side (Oefening 4: for all input fields)
+
+### POST /api/transactions
+
+- `save` function in `api/index.js`
+- new mutation in `AddOrEditTransaction.jsx`

@@ -1,15 +1,27 @@
 import useSWR from 'swr';
-import { getAll } from '../../api';
+import { getAll, save } from '../../api';
 import TransactionForm from '../../components/transactions/TransactionForm';
 import AsyncData from '../../components/AsyncData';
 import { useParams } from 'react-router';
+import useSWRMutation from 'swr/mutation';
 
 export default function AddOrEditTransaction() {
   const {
     data: places = [],
     error: placesError,
     isLoading: placesLoading,
-  } = useSWR('places', getAll);
+  } = useSWR(
+    'places',
+    getAll,
+  );
+
+  const {
+    trigger: saveTransaction,
+    error: saveError,
+  } = useSWRMutation(
+    'transactions',
+    save,
+  );
 
   const { id } = useParams();
 
@@ -17,9 +29,15 @@ export default function AddOrEditTransaction() {
     <div className='w-full max-w-sm'>
       <h1>{id ? 'Edit' : 'Add'} transaction</h1>
 
-      <AsyncData error={placesError} loading={placesLoading}>
+      <AsyncData
+        error={saveError || placesError}
+        loading={placesLoading}>
 
-        <TransactionForm places={places} />
+        <TransactionForm
+          places={places}
+          saveTransaction={saveTransaction}
+        />
+
       </AsyncData>
     </div>
   );
