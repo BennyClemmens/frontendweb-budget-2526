@@ -10,3 +10,8 @@ export const getAll = async (url) => {
 export const deleteById = async (url, { arg: id }) => {
   await axios.delete(`${baseUrl}/${url}/${id}`);
 };
+
+export const getById = async (url) => {
+  const {data} = await axios.get(`${baseUrl}/${url}`);
+  return data;
+};

@@ -500,3 +500,7 @@ Done in 2.8s using pnpm v10.17.0
 - .env in root met content: `VITE_API_URL='http://localhost:3000/api'`
 - imported in `api/index.js`
 - README.md aangepast
+
+### Oefening 4 - PlacesList via API
+
+- PlaceDetail & getbyID
