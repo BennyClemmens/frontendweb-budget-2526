@@ -521,3 +521,8 @@ Done in 2.8s using pnpm v10.17.0
 
 - knop 'new' op list
 - knop potloodje op Transaction
+
+### Form + Oefening 3 - AddOrEditTransaction
+
+- From copypasted
+- gebruikt in pagina, places opgehaald
