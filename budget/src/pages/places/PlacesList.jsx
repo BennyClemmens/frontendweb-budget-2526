@@ -1,6 +1,6 @@
 import useSWR from 'swr';
 import useSWRMutation from 'swr/mutation';
-import { getAll, deleteById, updateById } from '../../api';
+import { getAll, deleteById, save } from '../../api';
 import AsyncData from '../../components/AsyncData';
 import PlacesCards from '../../components/places/PlacesCards';
 
@@ -14,7 +14,7 @@ const PlacesList = () => {
     error: saveError,
   } = useSWRMutation(
     'places',
-    updateById,
+    save,
   );
 
   return (

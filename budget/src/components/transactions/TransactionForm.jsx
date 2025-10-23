@@ -1,4 +1,5 @@
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router';
 
 const EMPTY_TRANSACTION = {
   id: undefined,
@@ -56,10 +57,14 @@ const validationRules = {
   },
 };
 
-export default function TransactionForm({ places = [], saveTransaction }) {
-  const transaction = EMPTY_TRANSACTION;
+export default function TransactionForm({
+  places = [],
+  transaction = EMPTY_TRANSACTION,
+  saveTransaction,
+}) {
+  const navigate = useNavigate();
 
-  const { register, handleSubmit, formState: { errors, isValid }, reset } = useForm({
+  const { register, handleSubmit, formState: { errors, isValid } } = useForm({
     mode: 'onBlur',
     defaultValues: {
       date: toDateInputString(transaction?.date),
@@ -69,16 +74,17 @@ export default function TransactionForm({ places = [], saveTransaction }) {
     },
   });
 
-  const onSubmit = async (body) => {
+  const onSubmit = async (values) => {
     if (!isValid) return;
     //console.log(JSON.stringify(values));
 
-    await saveTransaction(body, {
+    await saveTransaction({
+      id: transaction?.id,
+      ...values,
+    }, {
       throwOnError: false,
-      onSuccess: () => reset(),
+      onSuccess: () => navigate('/transactions'),
     });
-
-    reset();
   };
 
   return (

@@ -17,12 +17,16 @@ export const getById = async (url) => {
   return data;
 };
 
-export const updateById = async (url, { arg: body }) => {
-  const { id, ...values } = body;
-  //console.log(`updateById aangeroepen met url ${url} en body ${JSON.stringify(body)} als arg`);
-  await axios.put(`${baseUrl}/${url}/${id}`, values);
-};
+// export const updateById = async (url, { arg: body }) => {
+//   const { id, ...values } = body;
+//   //console.log(`updateById aangeroepen met url ${url} en body ${JSON.stringify(body)} als arg`);
+//   await axios.put(`${baseUrl}/${url}/${id}`, values);
+// };
 
-export const save = async (url, { arg: body }) => {
-  await axios.post(`${baseUrl}/${url}`, body);
-};
+export async function save(url, { arg: { id, ...data } }) {
+  await axios({
+    method: id ? 'PUT' : 'POST',
+    url: `${baseUrl}/${url}/${id ?? ''}`,
+    data,
+  });
+}

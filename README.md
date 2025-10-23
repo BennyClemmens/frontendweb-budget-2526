@@ -538,3 +538,9 @@ Done in 2.8s using pnpm v10.17.0
 
 - `save` function in `api/index.js`
 - new mutation in `AddOrEditTransaction.jsx`
+
+### PUT /api/transactions/:id
+
+- updateid vervangen door dynamische save, ook in PlacesList
+- transactie opgehaald in AddOrEdit en doorgegeven aan form
+- navigate terug naar list na add/edit
