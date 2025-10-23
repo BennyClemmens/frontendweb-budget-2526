@@ -507,3 +507,12 @@ Done in 2.8s using pnpm v10.17.0
 - PlaceCards holds the list now
 - PlaceList now talks to database using SWR for get, delete, update
 - fixes for passing props and states
+
+## 5. Formulieren & hooks
+
+### Oefening 1: Routing
+
+- `AddOrEditTransaction.jsx` met placeholder voor weergave
+- bijkomende routes in `main.jsx`:
+  - `/transactions/add`
+  - `/transactions/edit/:id`

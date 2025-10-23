@@ -8,6 +8,7 @@ import PlacesList from './pages/places/PlacesList.jsx';
 import NotFound from './pages/NotFound.jsx';
 import About, { Services, History, Location } from './pages/about/About.jsx';
 import PlaceDetail from './pages/places/PlaceDetail.jsx';
+import AddOrEditTransaction from './pages/transactions/AddOrEditTransaction';
 import Layout from './pages/Layout.jsx';
 
 const router = createBrowserRouter([
@@ -20,7 +21,19 @@ const router = createBrowserRouter([
       },
       {
         path: 'transactions',
-        Component: TransactionList,
+        children: [
+          {
+            index: true,
+            Component: TransactionList,
+          },
+          {
+            path: 'add',
+            Component: AddOrEditTransaction,
+          },          {
+            path: 'edit/:id',
+            Component: AddOrEditTransaction,
+          },
+        ],
       },
       {
         path: 'places',
