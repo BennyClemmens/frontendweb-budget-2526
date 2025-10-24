@@ -24,6 +24,8 @@ export const getById = async (url) => {
 // };
 
 export async function save(url, { arg: { id, ...data } }) {
+  console.log(`save was called with url ${url}, id ${id}, data ${JSON.stringify(data)}`);
+
   await axios({
     method: id ? 'PUT' : 'POST',
     url: `${baseUrl}/${url}/${id ?? ''}`,

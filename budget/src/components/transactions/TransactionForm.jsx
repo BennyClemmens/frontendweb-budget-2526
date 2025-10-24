@@ -76,7 +76,7 @@ export default function TransactionForm({
 
   const onSubmit = async (values) => {
     if (!isValid) return;
-    //console.log(JSON.stringify(values));
+    console.log(JSON.stringify(values));
 
     await saveTransaction({
       id: transaction?.id,
@@ -102,7 +102,6 @@ export default function TransactionForm({
             className='rounded bg-white p-1 text-gray-900 placeholder:text-gray-400 outline-1 outline-gray-300
           focus:outline-blue-600 w-full'
             placeholder='userid'
-            required
           />
           {errors.userId && <p className="text-red-500 text-sm mt-1">{errors.userId.message}</p> }
         </div>
@@ -119,6 +118,7 @@ export default function TransactionForm({
           focus:outline-blue-600 w-full'
             placeholder='date'
           />
+          {errors.date && <p className="text-red-500 text-sm mt-1">{errors.date.message}</p> }
         </div>
 
         <div className='mb-3'>
@@ -133,7 +133,7 @@ export default function TransactionForm({
            rounded-md bg-white py-1.5 pr-8 pl-3 text-base text-gray-900
            outline-1 -outline-offset-1 outline-gray-300 focus:outline-2
            focus:-outline-offset-2 focus:outline-blue-600 sm:text-sm/6"
-            required>
+          >
             <option value='' disabled>
               -- Select a place --
             </option>
@@ -143,6 +143,7 @@ export default function TransactionForm({
               </option>
             ))}
           </select>
+          {errors.placeId && <p className="text-red-500 text-sm mt-1">{errors.placeId.message}</p> }
         </div>
 
         <div className='mb-3'>
@@ -156,8 +157,8 @@ export default function TransactionForm({
             type='number'
             className='rounded bg-white p-1 text-gray-900 placeholder:text-gray-400 outline-1 outline-gray-300
           focus:outline-blue-600 w-full'
-            required
           />
+          {errors.amount && <p className="text-red-500 text-sm mt-1">{errors.amount.message}</p> }
         </div>
 
         <div className='flex justify-end'>
