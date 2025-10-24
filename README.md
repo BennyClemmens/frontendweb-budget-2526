@@ -544,3 +544,9 @@ Done in 2.8s using pnpm v10.17.0
 - updateid vervangen door dynamische save, ook in PlacesList
 - transactie opgehaald in AddOrEdit en doorgegeven aan form
 - navigate terug naar list na add/edit
+
+### Memoisation
+
+- usememo
+- usecallback
+- memo in Place.jsx

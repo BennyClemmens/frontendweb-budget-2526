@@ -1,5 +1,6 @@
 import { IoTrashOutline, IoPencilOutline } from 'react-icons/io5';
 import { Link } from 'react-router';
+import { memo } from 'react';
 
 // kan ook met react-intl (https://formatjs.io/docs/getting-started/installation/)
 const dateFormat = new Intl.DateTimeFormat('nl-BE', {
@@ -15,7 +16,8 @@ const amountFormat = new Intl.NumberFormat('nl-BE', {
   minimumFractionDigits: 2,
 });
 
-export default function Transaction({ id, amount, date, place, user, onDelete }) {
+const TransactionMemoized = memo(function Transaction({ id, amount, date, place, user, onDelete }) {
+  console.log('Transaction: TODO: remove, logging for render learning...');
   const handleDelete = () => {
     onDelete(id);
   };
@@ -39,4 +41,6 @@ export default function Transaction({ id, amount, date, place, user, onDelete })
       </td>
     </tr>
   );
-}
+});
+
+export default TransactionMemoized;

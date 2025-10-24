@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useCallback } from 'react';
 import TransactionsTable from '../../components/transactions/TransactionsTable';
 import useSWR from 'swr';
 import { getAll, deleteById } from '../../api';
@@ -8,6 +8,7 @@ import { Link } from 'react-router';
 import { IoAddOutline, IoSearchOutline } from 'react-icons/io5';
 
 export default function TransactionList() {
+  console.log('TransactionList: TODO: remove, logging for render learning...');
   const [text, setText] = useState('');
   const [search, setSearch] = useState('');
 
@@ -25,11 +26,19 @@ export default function TransactionList() {
   const filteredTransactions = useMemo(
     () =>
       transactions.filter((t) => {
-        console.log('filtering, TODO: remove, logging for render learning...');
+        console.log('filteredTransactions: TODO: remove, logging for render learning...');
         return t.place.name.toLowerCase().includes(search.toLowerCase());
       })
     ,
     [search, transactions],
+  );
+
+  const handleDeleteTransaction = useCallback(
+    async (id) => {
+      await deleteTransaction(id);
+      alert('Transaction is removed');
+    },
+    [deleteTransaction],
   );
 
   return (
@@ -63,7 +72,7 @@ export default function TransactionList() {
         <AsyncData loading={isLoading} error={error|| deleteError} what='transactions'>
           <TransactionsTable
             transactions={filteredTransactions}
-            onDelete={deleteTransaction}
+            onDelete={handleDeleteTransaction}
           />
         </AsyncData>
       </div>

@@ -1,8 +1,9 @@
 import { IoTrashOutline } from 'react-icons/io5';
 import StarRating from './StarRating';
 import { Link } from 'react-router';
+import { memo } from 'react';
 
-const Place = ({ id, name, rating, onDelete = (f) => f, onRate = (f) => f }) => {
+const MemoizedPlace = memo(function Place({ id, name, rating, onDelete = (f) => f, onRate = (f) => f }) {
 
   const handleRate = (newRating) => {
     // console.log(`rating was clicked with ${newRating}`);
@@ -26,6 +27,6 @@ const Place = ({ id, name, rating, onDelete = (f) => f, onRate = (f) => f }) => 
       />
     </div>
   );
-};
+});
 
-export default Place;
+export default MemoizedPlace;
