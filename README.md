@@ -507,6 +507,7 @@ Done in 2.8s using pnpm v10.17.0
 - PlaceCards holds the list now
 - PlaceList now talks to database using SWR for get, delete, update
 - fixes for passing props and states
+- renamed data => places and added empty [] as default
 
 ## 5. Formulieren & hooks
 
