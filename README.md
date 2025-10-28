@@ -551,3 +551,25 @@ Done in 2.8s using pnpm v10.17.0
 - usememo
 - usecallback
 - memo in Place.jsx
+
+## 6. Context API
+
+### Licht of donker thema
+
+- custom variant in index.css
+- css associated to tailwind in vscode settings
+
+### Stap 1: Creëer de context
+
+- refactored `main.jsx` imports (for future git adds)
+- `ThemeContext` aangemaakt en geëxporteerd in `main.jsx` m.b.v. `createContext`
+- supplement tov cursus:  default
+
+### Stap 2: Bied de context aan
+
+- Context.provider met value rond element gewrapped
+
+### Stap 3: Consume de context
+
+- `TransactionsTable` consumeert de data (via de API context en useContext, niet via de props)
+- boolean darkmode beschikbaar + dark kleuren ingesteld
