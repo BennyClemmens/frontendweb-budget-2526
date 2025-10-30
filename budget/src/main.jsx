@@ -1,5 +1,4 @@
 import {
-  createContext,
   StrictMode,
 } from 'react';
 import { createRoot } from 'react-dom/client';
@@ -22,15 +21,7 @@ import About, {
 import PlaceDetail from './pages/places/PlaceDetail.jsx';
 import AddOrEditTransaction from './pages/transactions/AddOrEditTransaction';
 import Layout from './pages/Layout.jsx';
-
-const defaultContextAsFallback = {
-  darkmode: false,
-  toggleTheme: () => {
-    console.log('toggleTheme not yet implemented');
-  },
-};
-
-export const ThemeContext = createContext(defaultContextAsFallback);
+import ThemeProvider from './contexts/Theme.context.jsx';
 
 const router = createBrowserRouter([
   {
@@ -101,9 +92,9 @@ const router = createBrowserRouter([
 ]);
 
 createRoot(document.getElementById('root')).render(
-  <ThemeContext.Provider value={{darkmode: true}}>
-    <StrictMode>
+  <StrictMode>
+    <ThemeProvider>
       <RouterProvider router={router} />
-    </StrictMode>
-  </ThemeContext.Provider>,
+    </ThemeProvider>
+  </StrictMode>,
 );

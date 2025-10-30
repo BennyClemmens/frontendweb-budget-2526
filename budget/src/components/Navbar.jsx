@@ -1,13 +1,22 @@
 // src/components/Navbar.jsx
 import { NavLink, Link } from 'react-router';
-import { useState } from 'react';
+import {
+  useState,
+  useContext,
+} from 'react';
+import { ThemeContext } from '../contexts';
+import { IoMoonSharp, IoSunny } from 'react-icons/io5';
 import { BsFillPiggyBankFill } from 'react-icons/bs';
 
 const NavItem = ({ to, children, options}) => {
   return (
     <li className="mb-1">
-      <NavLink className={`text-gray-400 rounded aria-[current=page]:text-blue-800 ${options}`}
-        to={to}>{children}</NavLink>
+      <NavLink
+        className={`text-gray-400 dark:text-white rounded  aria-[current=page]:text-blue-800 ${options}`}
+        to={to}
+      >
+        {children}
+      </NavLink>
     </li>
   );
 };
@@ -21,6 +30,19 @@ const Logo = () => {
   );
 };
 
+const ThemeToggle = () => {
+  const { darkmode, toggleDarkmode } = useContext(ThemeContext);
+  return (
+    <button
+      type='button'
+      onClick={toggleDarkmode}
+      className='p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors'
+    >
+      {darkmode ? <IoMoonSharp color='white' size={20}/> : <IoSunny size={20}/>}
+    </button>
+  );
+};
+
 export default function Navbar() {
 
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
@@ -31,14 +53,16 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="relative px-4 py-4 flex justify-between items-center bg-gray-200">
+      <nav className="relative px-4 py-4 flex justify-between
+      items-center bg-white dark:bg-gray-900 dark:text-gray-100
+      border-b border-gray-200 dark:border-gray-700">
 
         <div className="flex items-center">
           <Logo />
         </div>
 
         <div className="lg:hidden">
-          <button className="navbar-burger flex items-center text-blue-600 p-3" onClick={toggleNavbar}>
+          <button className="flex items-center text-blue-600 p-3" onClick={toggleNavbar}>
             <svg className="block h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
               <title>Mobile menu</title>
               <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
@@ -51,11 +75,14 @@ export default function Navbar() {
           <NavItem to="/transactions">Transactions</NavItem>
           <NavItem to="/places">Places</NavItem>
         </ul>
+        <div className="hidden lg:flex lg:items-center lg:space-x-4">
+          <ThemeToggle />
+        </div>
       </nav>
       <div className={`relative z-50 ${isNavbarOpen ? 'block' : 'hidden'}`}>
         <div className="fixed inset-0 bg-gray-800 opacity-25"></div>
         <nav className="fixed top-0 left-0 bottom-0 flex flex-col w-5/6
-        max-w-sm py-6 px-6 bg-white border-r overflow-y-auto space-between">
+        max-w-sm py-6 px-6 bg-white border-r overflow-y-auto space-between dark:bg-black">
           <div className="flex items-center mb-8">
             <Logo />
             <button onClick={toggleNavbar}>

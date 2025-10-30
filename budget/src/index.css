@@ -1,8 +1,14 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @layer base {
+  html,
+  body,
+  #themewrapper {
+    @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-white;
+    min-height: 100vh;
+  }
   h1 {
     font-size: var(--text-4xl);
     margin-bottom: 4px;

@@ -573,3 +573,12 @@ Done in 2.8s using pnpm v10.17.0
 
 - `TransactionsTable` consumeert de data (via de API context en useContext, niet via de props)
 - boolean darkmode beschikbaar + dark kleuren ingesteld
+
+### ThemeContext en Provider
+
+- Theme context als provider
+- afwijking van cursus: alles binnen react!
+- custom-variant in tailwind
+- consumed in navbar
+- button in navbar to switch
+- code in Transactiontable weg, niet meer nodig
