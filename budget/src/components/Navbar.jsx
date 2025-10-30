@@ -2,9 +2,8 @@
 import { NavLink, Link } from 'react-router';
 import {
   useState,
-  useContext,
 } from 'react';
-import { ThemeContext } from '../contexts';
+import { useTheme } from '../contexts';
 import { IoMoonSharp, IoSunny } from 'react-icons/io5';
 import { BsFillPiggyBankFill } from 'react-icons/bs';
 
@@ -31,7 +30,7 @@ const Logo = () => {
 };
 
 const ThemeToggle = () => {
-  const { darkmode, toggleDarkmode } = useContext(ThemeContext);
+  const { darkmode, toggleDarkmode } = useTheme();
   return (
     <button
       type='button'

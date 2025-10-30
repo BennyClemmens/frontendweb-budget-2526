@@ -582,3 +582,8 @@ Done in 2.8s using pnpm v10.17.0
 - consumed in navbar
 - button in navbar to switch
 - code in Transactiontable weg, niet meer nodig
+
+### useTheme en Oefening 2 - useTheme
+
+- custom useTheme and useThemeColor
+- star colors and text

@@ -1,4 +1,7 @@
-import { createContext } from 'react';
+import {
+  createContext,
+  useContext,
+} from 'react';
 
 const defaultContextAsFallback = {
   darkmode: false, // TODO: import from config/.env cfr backend?
@@ -8,3 +11,10 @@ const defaultContextAsFallback = {
 };
 
 export const ThemeContext = createContext(defaultContextAsFallback);
+
+export const useTheme = () => useContext(ThemeContext);
+
+export const useThemeColor = () => {
+  const { darkmode } = useContext(ThemeContext);
+  return { darkmode };
+};

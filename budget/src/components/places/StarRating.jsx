@@ -1,13 +1,14 @@
 import { IoStarSharp } from 'react-icons/io5';
+import { useThemeColor } from '../../contexts';
 
 const Star = ({ selected = false, index, onSelect= (f) => f }) => {
-
+  const {darkmode} = useThemeColor();
   const handleSelect = () => {
     onSelect(index + 1);
   };
 
   return (
-    <IoStarSharp color={selected ? 'gold' : 'grey'} onClick={handleSelect} />
+    <IoStarSharp color={selected ? 'gold' : darkmode?'white': 'grey'} onClick={handleSelect} />
   );
 };
 
@@ -26,7 +27,7 @@ export default function StarRating({ totalStars = 5, selectedStars = 0, onRate }
           />
         ))}
       </div>
-      <p className="text-gray-700 mt-2">
+      <p className="text-gray-700 mt-2 dark:text-white">
         {selectedStars} of {totalStars} stars
       </p>
     </>
