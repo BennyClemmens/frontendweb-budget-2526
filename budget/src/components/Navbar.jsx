@@ -81,11 +81,12 @@ export default function Navbar() {
       <div className={`relative z-50 ${isNavbarOpen ? 'block' : 'hidden'}`}>
         <div className="fixed inset-0 bg-gray-800 opacity-25"></div>
         <nav className="fixed top-0 left-0 bottom-0 flex flex-col w-5/6
-        max-w-sm py-6 px-6 bg-white border-r overflow-y-auto space-between dark:bg-black">
+        max-w-sm py-6 px-6 border-r overflow-y-auto space-between bg-white dark:bg-gray-900 dark:text-gray-100">
           <div className="flex items-center mb-8">
             <Logo />
+            <ThemeToggle />
             <button onClick={toggleNavbar}>
-              <svg className="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500"
+              <svg className="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500 dark:text-white"
                 xmlns="http://www.w3.org/2000/svg" fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor">

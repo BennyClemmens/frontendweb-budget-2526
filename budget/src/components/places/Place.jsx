@@ -15,7 +15,8 @@ const MemoizedPlace = memo(function Place({ id, name, rating, onDelete = (f) => 
   };
 
   return (
-    <div className="p-3 outline outline-black/5 rounded-md shadow-lg mb-4">
+    <div className="p-3 outline outline-black/5 dark:outline-white/20 rounded-md shadow-md dark:shadow-gray-700/50 mb-4
+    flex flex-col">
       <h5 className="text-xl font-medium mb-2">
         <Link className="text-blue-600 underline" to={`/places/${id}`}>{name}</Link>
       </h5>

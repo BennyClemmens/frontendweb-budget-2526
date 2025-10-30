@@ -587,3 +587,5 @@ Done in 2.8s using pnpm v10.17.0
 
 - custom useTheme and useThemeColor
 - star colors and text
+- anti-pattern direct dom manipulation countered
+- dark theme and colors implemented everywhere

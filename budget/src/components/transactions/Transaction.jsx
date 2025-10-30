@@ -23,7 +23,7 @@ const TransactionMemoized = memo(function Transaction({ id, amount, date, place,
   };
 
   return (
-    <tr className="border-b border-gray-200">
+    <tr className="border-b border-gray-200 dark:border-gray-800">
       <td className="py-2">{dateFormat.format(new Date(date))}</td>
       <td className="py-2">{user.name}</td>
       <td className="py-2">{place.name}</td>
