@@ -20,7 +20,11 @@ const MemoizedPlace = memo(function Place({ id, name, rating, onDelete = (f) => 
       <h5 className="text-xl font-medium mb-2">
         <Link className="text-blue-600 underline" to={`/places/${id}`}>{name}</Link>
       </h5>
-      <button className='mt-6 py-2 px-2.5 rounded-md bg-blue-600 text-white' onClick={handleDelete}><IoTrashOutline />
+      <button
+        className='primary'
+        onClick={handleDelete}
+      >
+        <IoTrashOutline />
       </button>
       <StarRating
         selectedStars={rating}

@@ -605,3 +605,8 @@ Done in 2.8s using pnpm v10.17.0
 
 - mbv isSubmitting
 - cancel button
+
+### Toevoegen van stijlregels voor de knoppen
+
+- components layer in index.css
+- toegepast voor knoppen

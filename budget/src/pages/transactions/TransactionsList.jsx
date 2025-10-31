@@ -44,8 +44,8 @@ export default function TransactionList() {
   return (
     <>
       <h1>Transactions</h1>
-      <div className='flex justify-between mb-3 gap-2'>   {/* 👈 */}
-        <div className="w-1/2 flex gap-2">  {/* 👈 */}
+      <div className='flex justify-between mb-3 gap-2'>
+        <div className="w-1/2 flex gap-2">
           <input
             type='search'
             id='search'
@@ -57,13 +57,15 @@ export default function TransactionList() {
           />
           <button
             type='button'
-            className='py-2 px-2.5 rounded-md text-blue-600 border border-blue-600'
+            className='secondary'
             onClick={() => setSearch(text)}
           >
             <IoSearchOutline />
           </button>
         </div>
-        <Link to='/transactions/add' className='py-2 px-2.5 rounded-md text-white border border-blue-600 bg-blue-600'>
+        <Link
+          to='/transactions/add'
+          className='primary'>
           <IoAddOutline />
         </Link>
       </div>

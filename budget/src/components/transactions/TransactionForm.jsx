@@ -137,14 +137,13 @@ export default function TransactionForm({
           <button
             type='submit'
             disabled={isSubmitting}
-            className='py-2 px-2.5 rounded-md text-white bg-blue-600'
+            className='primary'
           >
             {transaction?.id ? 'Save' : 'Add'} transaction
           </button>
           <Link
             disabled={isSubmitting}
-            className='py-2 px-4 rounded text-blue-500
-      border border-blue-500 bg-white dark:bg-gray-900 ml-2'
+            className='secondary ml-2'
             to='/transactions'
           >
             Cancel
