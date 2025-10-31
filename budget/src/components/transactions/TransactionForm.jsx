@@ -4,6 +4,7 @@ import {
 } from 'react-hook-form';
 import { useNavigate } from 'react-router';
 import LabelInput from '../LabelInput';
+import SelectList from '../SelectList';
 
 const EMPTY_TRANSACTION = {
   id: undefined,
@@ -79,7 +80,7 @@ export default function TransactionForm({
     },
   });
 
-  const { register, handleSubmit, formState: { errors, isValid } } = methods;
+  const { handleSubmit, formState: { isValid } } = methods;
 
   const onSubmit = async (values) => {
     if (!isValid) return;
@@ -113,30 +114,13 @@ export default function TransactionForm({
           inputType="date"
           inputPlaceholder="date"
         />
-        <div className='mb-3'>
-          <label htmlFor='places' className="block text-sm/6 font-medium text-gray-900">
-            Place
-          </label>
-          <select
-            {...register('placeId', validationRules.placeId)}
-            id='placeId'
-            name='placeId'
-            className="w-full appearance-none
-           rounded-md bg-white py-1.5 pr-8 pl-3 text-base text-gray-900
-           outline-1 -outline-offset-1 outline-gray-300 focus:outline-2
-           focus:-outline-offset-2 focus:outline-blue-600 sm:text-sm/6"
-          >
-            <option value='' disabled>
-              -- Select a place --
-            </option>
-            {places.map(({ id, name }) => (
-              <option key={id} value={id}>
-                {name}
-              </option>
-            ))}
-          </select>
-          {errors.placeId && <p className="text-red-500 text-sm mt-1">{errors.placeId.message}</p> }
-        </div>
+        <SelectList
+          label='Place'
+          name='placeId'
+          placeholder='---select a place---'
+          items={places}
+          validationRules={validationRules.placeId}
+        />
         <LabelInput
           labelText="Amount"
           inputName="amount"

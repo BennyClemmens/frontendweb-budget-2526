@@ -596,3 +596,7 @@ Done in 2.8s using pnpm v10.17.0
 - dark theme for native elements via css
 - FormContext via FormProvider
 - useFormContext in LabelInput
+
+### Oefening 3 - SelectList
+
+- idem setup voor selectlist
