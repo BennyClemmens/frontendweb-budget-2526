@@ -15,6 +15,7 @@ export default function LabelInput(
     register,
     formState: {
       errors,
+      isSubmitting,
     },
   } = useFormContext();
 
@@ -28,6 +29,7 @@ export default function LabelInput(
         id={inputId}
         name={inputName}
         type={inputType}
+        disabled={isSubmitting}
         className='rounded bg-white p-1 text-gray-900 placeholder:text-gray-400
         outline-1 outline-gray-300 focus:outline-blue-600 w-full dark:bg-gray-800
         dark:text-white'

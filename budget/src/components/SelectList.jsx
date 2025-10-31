@@ -12,6 +12,7 @@ export default function SelectList({
     register,
     formState: {
       errors,
+      isSubmitting,
     },
   } = useFormContext();
 
@@ -30,6 +31,7 @@ export default function SelectList({
           outline-1 -outline-offset-1 outline-gray-300 focus:outline-2
           focus:-outline-offset-2 focus:outline-blue-600
           sm:text-sm/6 dark:bg-gray-800 dark:text-white"
+      disabled={isSubmitting}
       {...rest} >
       <option value='' disabled>
         {placeholder}

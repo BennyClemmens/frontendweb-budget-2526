@@ -600,3 +600,8 @@ Done in 2.8s using pnpm v10.17.0
 ### Oefening 3 - SelectList
 
 - idem setup voor selectlist
+
+### Uitschakelen inputvelden bij submit
+
+- mbv isSubmitting
+- cancel button

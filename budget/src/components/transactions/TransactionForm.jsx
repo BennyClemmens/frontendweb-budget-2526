@@ -2,7 +2,10 @@ import {
   useForm,
   FormProvider,
 } from 'react-hook-form';
-import { useNavigate } from 'react-router';
+import {
+  useNavigate,
+  Link,
+} from 'react-router';
 import LabelInput from '../LabelInput';
 import SelectList from '../SelectList';
 
@@ -80,7 +83,7 @@ export default function TransactionForm({
     },
   });
 
-  const { handleSubmit, formState: { isValid } } = methods;
+  const { handleSubmit, formState: { isValid, isSubmitting } } = methods;
 
   const onSubmit = async (values) => {
     if (!isValid) return;
@@ -131,9 +134,21 @@ export default function TransactionForm({
         />
 
         <div className='flex justify-end'>
-          <button type='submit' className='py-2 px-2.5 rounded-md text-white bg-blue-600'>
+          <button
+            type='submit'
+            disabled={isSubmitting}
+            className='py-2 px-2.5 rounded-md text-white bg-blue-600'
+          >
             {transaction?.id ? 'Save' : 'Add'} transaction
           </button>
+          <Link
+            disabled={isSubmitting}
+            className='py-2 px-4 rounded text-blue-500
+      border border-blue-500 bg-white dark:bg-gray-900 ml-2'
+            to='/transactions'
+          >
+            Cancel
+          </Link>
         </div>
       </form>
     </FormProvider>
