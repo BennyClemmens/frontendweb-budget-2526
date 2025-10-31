@@ -13,4 +13,18 @@
     font-size: var(--text-4xl);
     margin-bottom: 4px;
   }
+
+  input,
+  select,
+  textarea,
+  button {
+    color-scheme: light;
+  }
+
+  .dark input,
+  .dark select,
+  .dark textarea,
+  .dark button {
+    color-scheme: dark;
+  }
 }

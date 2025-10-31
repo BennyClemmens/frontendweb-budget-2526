@@ -589,3 +589,10 @@ Done in 2.8s using pnpm v10.17.0
 - star colors and text
 - anti-pattern direct dom manipulation countered
 - dark theme and colors implemented everywhere
+
+### Duplicate code
+
+- LabelInput component (met dark mode en props), gebruikt in form
+- dark theme for native elements via css
+- FormContext via FormProvider
+- useFormContext in LabelInput

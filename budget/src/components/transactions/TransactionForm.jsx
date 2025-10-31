@@ -1,5 +1,9 @@
-import { useForm } from 'react-hook-form';
+import {
+  useForm,
+  FormProvider,
+} from 'react-hook-form';
 import { useNavigate } from 'react-router';
+import LabelInput from '../LabelInput';
 
 const EMPTY_TRANSACTION = {
   id: undefined,
@@ -64,7 +68,8 @@ export default function TransactionForm({
 }) {
   const navigate = useNavigate();
 
-  const { register, handleSubmit, formState: { errors, isValid } } = useForm({
+  // const { register, handleSubmit, formState: { errors, isValid } } = useForm({
+  const methods = useForm({
     mode: 'onBlur',
     defaultValues: {
       date: toDateInputString(transaction?.date),
@@ -73,6 +78,8 @@ export default function TransactionForm({
       userId: transaction?.user.id,
     },
   });
+
+  const { register, handleSubmit, formState: { errors, isValid } } = methods;
 
   const onSubmit = async (values) => {
     if (!isValid) return;
@@ -88,39 +95,24 @@ export default function TransactionForm({
   };
 
   return (
-    <>
+    <FormProvider {...methods}>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className='mb-3'>
-          <label htmlFor='userId' className="block text-sm/6 font-medium text-gray-900">
-            User id
-          </label>
-          <input
-            {...register('userId', validationRules.userId)}
-            id='userId'
-            name='userId'
-            type='number'
-            className='rounded bg-white p-1 text-gray-900 placeholder:text-gray-400 outline-1 outline-gray-300
-          focus:outline-blue-600 w-full'
-            placeholder='userid'
-          />
-          {errors.userId && <p className="text-red-500 text-sm mt-1">{errors.userId.message}</p> }
-        </div>
-        <div className='mb-3'>
-          <label htmlFor='date' className="block text-sm/6 font-medium text-gray-900">
-            Date
-          </label>
-          <input
-            {...register('date', validationRules.date)}
-            id='date'
-            name='date'
-            type='date'
-            className='rounded bg-white p-1 text-gray-900 placeholder:text-gray-400 outline-1 outline-gray-300
-          focus:outline-blue-600 w-full'
-            placeholder='date'
-          />
-          {errors.date && <p className="text-red-500 text-sm mt-1">{errors.date.message}</p> }
-        </div>
-
+        <LabelInput
+          labelText="UserId"
+          inputName="userId"
+          validationRules={validationRules.userId}
+          inputId="userId"
+          inputType="number"
+          inputPlaceholder="userid"
+        />
+        <LabelInput
+          labelText="Date"
+          inputName="date"
+          validationRules={validationRules.date}
+          inputId="date"
+          inputType="date"
+          inputPlaceholder="date"
+        />
         <div className='mb-3'>
           <label htmlFor='places' className="block text-sm/6 font-medium text-gray-900">
             Place
@@ -145,21 +137,14 @@ export default function TransactionForm({
           </select>
           {errors.placeId && <p className="text-red-500 text-sm mt-1">{errors.placeId.message}</p> }
         </div>
-
-        <div className='mb-3'>
-          <label htmlFor='amount' className="block text-sm/6 font-medium text-gray-900">
-            Amount
-          </label>
-          <input
-            {...register('amount', validationRules.amount)}
-            id='amount'
-            name='amount'
-            type='number'
-            className='rounded bg-white p-1 text-gray-900 placeholder:text-gray-400 outline-1 outline-gray-300
-          focus:outline-blue-600 w-full'
-          />
-          {errors.amount && <p className="text-red-500 text-sm mt-1">{errors.amount.message}</p> }
-        </div>
+        <LabelInput
+          labelText="Amount"
+          inputName="amount"
+          validationRules={validationRules.amount}
+          inputId="amount"
+          inputType="number"
+          inputPlaceholder="amount"
+        />
 
         <div className='flex justify-end'>
           <button type='submit' className='py-2 px-2.5 rounded-md text-white bg-blue-600'>
@@ -167,6 +152,6 @@ export default function TransactionForm({
           </button>
         </div>
       </form>
-    </>
+    </FormProvider>
   );
 }
