@@ -660,3 +660,9 @@ Done in 930ms using pnpm v10.17.0
 - eslint config aangepast voor cypress
 - script in package.json toegevoegd
 - cypress opgestart voor basic config
+
+### De eerste test
+
+- created first test
+- aangepast naar 'true' assertion
+- added a first trivial test
