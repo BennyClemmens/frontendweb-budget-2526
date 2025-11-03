@@ -674,3 +674,8 @@ Done in 930ms using pnpm v10.17.0
 - nieuwe test: cypress/e2e/addTransaction.cy.js
 - click op body om blur op te vangen
 - remove na add (van de laatste)
+
+### Oefening 1 - Foutboodschappen in TransactionForm
+
+- data-cy attribus for error components: Error, labelInput, SelectList
+- added test for negative user

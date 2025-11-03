@@ -36,7 +36,13 @@ export default function LabelInput(
         placeholder={inputPlaceholder}
         {...rest}
       />
-      {errors[inputName] && <p className="text-red-500 text-sm mt-1">{errors[inputName].message}</p> }
+      <p
+        hidden={!errors[inputName]}
+        className="text-red-500 text-sm mt-1"
+        data-cy="label_input_error"
+      >
+        {errors[inputName] ? errors[inputName].message : ''}
+      </p>
     </div>
   );
 }
