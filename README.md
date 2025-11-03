@@ -689,3 +689,8 @@ Done in 930ms using pnpm v10.17.0
 
 - transactions.json in fixturers map
 - test aangepast zodat deze fixtures gebruikt worden
+
+### Waiting
+
+- nieuwe test met waiting
+- Loader met extra attribute
