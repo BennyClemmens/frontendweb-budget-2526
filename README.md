@@ -610,3 +610,53 @@ Done in 2.8s using pnpm v10.17.0
 
 - components layer in index.css
 - toegepast voor knoppen
+
+## 7. Testing
+
+### Cypress
+
+```bash
+PS D:\DATA\GIT\FRONTENDWEB\frontendweb-budget-2526\budget> pnpm add -D cypress
+
+   ╭───────────────────────────────────────────────╮
+   │                                               │
+   │     Update available! 10.17.0 → 10.20.0.      │
+   │     Changelog: https://pnpm.io/v/10.20.0      │
+   │   To update, run: corepack use pnpm@10.20.0   │
+   │                                               │
+   ╰───────────────────────────────────────────────╯
+
+Packages: +144 -4
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----
+Progress: resolved 386, reused 216, downloaded 95, added 144, done
+
+devDependencies:
++ cypress 15.5.0
+
+╭ Warning ───────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                            │
+│   Ignored build scripts: cypress.                                                          │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed to run scripts.   │
+│                                                                                            │
+╰────────────────────────────────────────────────────────────────────────────────────────────╯
+
+Done in 2.7s using pnpm v10.17.0
+PS D:\DATA\GIT\FRONTENDWEB\frontendweb-budget-2526\budget> pnpm approve-builds
+√ Choose which packages to build (Press <space> to select, <a> to toggle all, <i> to invert selection) · cypress
+√ The next packages will now be built: cypress.
+Do you approve? (y/N) · true
+node_modules/.pnpm/cypress@15.5.0/node_modules/cypress: Running postinstall script, done in 45.5s
+PS D:\DATA\GIT\FRONTENDWEB\frontendweb-budget-2526\budget> pnpm add -D eslint-plugin-cypress
+Packages: +1
++
+Progress: resolved 387, reused 311, downloaded 1, added 1, done
+
+devDependencies:
++ eslint-plugin-cypress 5.2.0
+
+Done in 930ms using pnpm v10.17.0
+```
+
+- eslint config aangepast voor cypress
+- script in package.json toegevoegd
+- cypress opgestart voor basic config
