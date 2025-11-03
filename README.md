@@ -694,3 +694,13 @@ Done in 930ms using pnpm v10.17.0
 
 - nieuwe test met waiting
 - Loader met extra attribute
+
+### Oefening 2 - Zoekfunctie van transacties
+
+- toevoegen data-cy attributen waar nodig
+- data-cy voor foutboodschap bij foute backend
+- copypast van modeloplossing
+
+### Oefening 3 - Readme aanpassen
+
+- basic info added
