@@ -679,3 +679,8 @@ Done in 930ms using pnpm v10.17.0
 
 - data-cy attribus for error components: Error, labelInput, SelectList
 - added test for negative user
+
+### Mocks
+
+- simple mock test in `cypress/e2e/transactions.cy.js`
+- port 9000 <=> 3000
