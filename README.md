@@ -684,3 +684,8 @@ Done in 930ms using pnpm v10.17.0
 
 - simple mock test in `cypress/e2e/transactions.cy.js`
 - port 9000 <=> 3000
+
+### Fixtures
+
+- transactions.json in fixturers map
+- test aangepast zodat deze fixtures gebruikt worden
