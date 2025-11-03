@@ -666,3 +666,11 @@ Done in 930ms using pnpm v10.17.0
 - created first test
 - aangepast naar 'true' assertion
 - added a first trivial test
+
+### Anatomie van een UI test & Add and remove transaction test
+
+- data-cy attributes toegevoegd (in de transaction form)
+- data-cy attributes Transaction component
+- nieuwe test: cypress/e2e/addTransaction.cy.js
+- click op body om blur op te vangen
+- remove na add (van de laatste)

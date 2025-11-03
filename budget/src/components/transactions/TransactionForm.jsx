@@ -108,6 +108,7 @@ export default function TransactionForm({
           inputId="userId"
           inputType="number"
           inputPlaceholder="userid"
+          data-cy="user_input"
         />
         <LabelInput
           labelText="Date"
@@ -116,6 +117,7 @@ export default function TransactionForm({
           inputId="date"
           inputType="date"
           inputPlaceholder="date"
+          data-cy="date_input"
         />
         <SelectList
           label='Place'
@@ -123,6 +125,7 @@ export default function TransactionForm({
           placeholder='---select a place---'
           items={places}
           validationRules={validationRules.placeId}
+          data-cy="place_input"
         />
         <LabelInput
           labelText="Amount"
@@ -131,6 +134,7 @@ export default function TransactionForm({
           inputId="amount"
           inputType="number"
           inputPlaceholder="amount"
+          data-cy="amount_input"
         />
 
         <div className='flex justify-end'>
@@ -138,6 +142,7 @@ export default function TransactionForm({
             type='submit'
             disabled={isSubmitting}
             className='primary'
+            data-cy="submit_transaction"
           >
             {transaction?.id ? 'Save' : 'Add'} transaction
           </button>
